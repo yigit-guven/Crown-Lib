@@ -6,24 +6,14 @@ public class ServerConfig {
     public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
     public static final ModConfigSpec SPEC;
 
-    public static final ModConfigSpec.IntValue EXAMPLE_INT;
-    public static final ModConfigSpec.BooleanValue EXAMPLE_BOOLEAN;
-    public static final ModConfigSpec.ConfigValue<String> EXAMPLE_STRING;
+    public static final ModConfigSpec.ConfigValue<String> SERVER_MOTD;
 
     static {
         BUILDER.push("Server Configuration");
 
-        EXAMPLE_INT = BUILDER
-                .comment("An example integer setting for the server.")
-                .defineInRange("exampleInt", 42, 0, Integer.MAX_VALUE);
-
-        EXAMPLE_BOOLEAN = BUILDER
-                .comment("An example boolean setting.")
-                .define("exampleBoolean", true);
-
-        EXAMPLE_STRING = BUILDER
-                .comment("An example string setting.")
-                .define("exampleString", "Hello Server!");
+        SERVER_MOTD = BUILDER
+                .comment("Custom Message of the Day (MotD). Supports standard Minecraft color codes (using &). Leave empty to use vanilla server.properties MotD.")
+                .define("serverMotd", "&4\u262B &cHighcrown MMORPG &4\u262B\\n&6Forge your legacy in a world of magic and steel!");
 
         BUILDER.pop();
         SPEC = BUILDER.build();
