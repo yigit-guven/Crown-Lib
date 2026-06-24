@@ -13,7 +13,7 @@ public class ServerConfig {
 
         SERVER_MOTD = BUILDER
                 .comment("Custom Message of the Day (MotD). Supports standard Minecraft color codes (using &). Leave empty to use vanilla server.properties MotD.")
-                .define("serverMotd", "&4\u262B &cHighcrown MMORPG &4\u262B\\n&6Forge your legacy in a world of magic and steel!");
+                .define("serverMotd", "");
 
         BUILDER.pop();
         SPEC = BUILDER.build();
